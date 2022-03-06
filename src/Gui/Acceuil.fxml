@@ -41,12 +41,15 @@
          </font>
       </Button>
       <Circle fill="WHITE" layoutX="483.0" layoutY="240.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Button layoutX="825.0" layoutY="219.0" mnemonicParsing="false" styleClass="blogList-navBar-btn" stylesheets="@styleSheet.css" text="Button" textFill="WHITE">
+      <Button layoutX="825.0" layoutY="219.0" mnemonicParsing="false" onAction="#goToProduitPage" styleClass="blogList-navBar-btn" stylesheets="@styleSheet.css" text="Produit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Circle fill="WHITE" layoutX="814.0" layoutY="239.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Button layoutX="745.0" layoutY="227.0" mnemonicParsing="false" onAction="#goToBlogPage" text="Blogs" />
+      <Button layoutX="732.0" layoutY="219.0" mnemonicParsing="false" onAction="#goToBlogPage" styleClass="blogList-navBar-btn" stylesheets="@styleSheet.css" text="Blogs" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

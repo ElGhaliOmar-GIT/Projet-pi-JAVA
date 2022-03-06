@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" fx:id="interfaceDajout" prefHeight="914.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.FXMLAjouterProduitController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcc8d3" height="755.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="1309.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000e12" height="182.0" layoutX="-1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="1309.0" />
+      <Label layoutX="414.0" layoutY="292.0" prefHeight="21.0" prefWidth="120.0" text="Type de produit" textFill="#000e12" />
+      <Label layoutX="415.0" layoutY="368.0" prefHeight="21.0" prefWidth="146.0" text="Nom du Produit" textFill="#000e12" />
+      <Label layoutX="416.0" layoutY="447.0" prefHeight="21.0" prefWidth="134.0" text="Quantite" textFill="#000e12" />
+      <Label layoutX="421.0" layoutY="512.0" prefHeight="21.0" prefWidth="120.0" text="Prix" textFill="#000e12" />
+      <TextField fx:id="FxPrix" layoutX="666.0" layoutY="508.0" />
+      <TextField fx:id="FxQuantite" layoutX="666.0" layoutY="443.0" />
+      <TextField fx:id="FxNom" layoutX="666.0" layoutY="369.0" />
+      <Button fx:id="FxAjouter" blendMode="MULTIPLY" layoutX="681.0" layoutY="688.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="39.0" prefWidth="146.0" text="Ajouter" textFill="#000e12">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../image/icons8-plus-2-mathématique-30.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="430.0" layoutY="580.0" text="image" textFill="#000e12" />
+      <ImageView fx:id="FxPhoto" fitHeight="192.0" fitWidth="245.0" layoutX="945.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="182.0" fitWidth="200.0" layoutX="14.0" layoutY="-3.0">
+         <image>
+            <Image url="@../image/272071956_646555749798327_1095942025241001948_n%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="annulerAjout" blendMode="COLOR_BURN" layoutX="505.0" layoutY="687.0" mnemonicParsing="false" onAction="#annulerAjout" prefHeight="40.0" prefWidth="146.0" text="annuler">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../image/icons8-x-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ComboBox fx:id="FxReference" layoutX="666.0" layoutY="288.0" prefHeight="31.0" prefWidth="187.0" promptText="Categories" />
+      <ImageView fitHeight="232.0" fitWidth="271.0" layoutX="58.0" layoutY="611.0">
+         <image>
+            <Image url="@../image/appareil-electronique.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="585.0" layoutY="566.0" onMousePressed="#ajouterPhoto" prefHeight="62.0" prefWidth="70.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="72.0">
+               <image>
+                  <Image url="@../image/add-image-icon-png-14.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

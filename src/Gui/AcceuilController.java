@@ -81,4 +81,11 @@ public class AcceuilController implements Initializable {
         anchor.getChildren().setAll(goToBlog);
     }
 
+    @FXML
+    private void goToProduitPage(ActionEvent event) throws IOException {
+        AnchorPane goToBlog = FXMLLoader.load(getClass().getResource("ProduitFrond.fxml"));
+        anchor.getChildren().removeAll();
+        anchor.getChildren().setAll(goToBlog);
+    }
+
 }

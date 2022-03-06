@@ -40,6 +40,24 @@ public class UtilisateurService {
         return false;
 
     }
+    
+    public ObservableList<String> getLivreur(ObservableList<String> items) {
+        String sql = "select nom , prenom from utilisateur where typecompte='livreur'";
+        try {
+
+            Connection cnx = MaConnexion.getInstance().getCnx();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                String lv = rs.getString(1) + " " + rs.getString(2);
+                items.add(lv);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
 
     public String getTypecompteByEmail(String email) {
         String sql = " Select typecompte from utilisateur where email='" + email + "'";

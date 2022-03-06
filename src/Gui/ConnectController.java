@@ -79,7 +79,6 @@ public class ConnectController implements Initializable {
         verify = m.verify(email.getText(), password.getText());
 
         if (verify == false) {
-
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("connection impossible");
             alert.setContentText("Veuillez vérifier votre email et mot de passe ");
@@ -101,23 +100,26 @@ public class ConnectController implements Initializable {
 
                     username = us.getNomByEmail(email.getText()) + " " + us.getPreomByEmail(email.getText());
                     typecompte = us.getTypecompteByEmail(email.getText());
+                    int testadmin = us.getTestAdmin(email.getText());
 
                     if (typecompte.equals("client")) {
                         ClientService cs = new ClientService();
                         client = cs.selectClientByEmail(email.getText());
 
-                    } else if (typecompte.equals("fournisseur")) {
+                    } else if (typecompte.equals("fournisseur") && (testadmin == 0)) {
                         FournisseurService fs = new FournisseurService();
                         fournisseur = fs.selectFournisseurByEmail(email.getText());
+                        
+                        admin = FXMLLoader.load(getClass().getResource("CategorieFXInterface.fxml"));
+                        sceneconnect.getChildren().removeAll();
+                        sceneconnect.getChildren().setAll(admin);
 
                     } else if (typecompte.equals("livreur")) {
                         LivreurService ls = new LivreurService();
                         livreur = ls.selectLivreurByEmail(email.getText());
                     }
 
-                    int testadmin = us.getTestAdmin(email.getText());
-
-                    if (testadmin == 1) {
+                    /*if (testadmin == 1) {
                         admin = FXMLLoader.load(getClass().getResource("AdminInterface.fxml"));
                         sceneconnect.getChildren().removeAll();
                         sceneconnect.getChildren().setAll(admin);
@@ -126,8 +128,7 @@ public class ConnectController implements Initializable {
                         profile = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
                         sceneconnect.getChildren().removeAll();
                         sceneconnect.getChildren().setAll(profile);
-                    }
-
+                    }*/
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
