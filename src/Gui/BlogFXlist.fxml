@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="914.0" prefWidth="1309.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.BlogFXlistController">
+   <children>
+      <ComboBox fx:id="sortCB" layoutX="21.0" layoutY="324.0" prefHeight="25.0" prefWidth="153.0" promptText="Classer Par..." stylesheets="@styleSheet.css" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000e12" height="274.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <ImageView fitHeight="357.0" fitWidth="644.0" layoutX="665.0" layoutY="409.0" pickOnBounds="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="665.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../image/Background.jpg" />
+         </image></ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="4.0" layoutY="87.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <ImageView fx:id="imageUtilisateur" fitHeight="60.0" fitWidth="63.0" layoutX="1238.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="607.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/blogLogo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="595.0" layoutY="209.0" text="Blogs" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="43.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="295.0" layoutY="281.0" prefHeight="633.0" prefWidth="719.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="295.0">
+         <children>
+            <ScrollPane prefHeight="633.0" prefWidth="711.0" styleClass="post-item-scrollPane" stylesheets="@styleSheet.css">
+               <content>
+                  <GridPane fx:id="grid" prefHeight="19.0" prefWidth="97.0">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <Label fx:id="nomUtilisateur" layoutX="1069.0" layoutY="29.0" text="Nom Utilisateur" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="86.0" layoutX="11.0" layoutY="1.0">
+         <image>
+            <Image url="@../image/logoSmall.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="848.0" layoutY="26.0" mnemonicParsing="false" styleClass="blogList-navBar-btn" stylesheets="@styleSheet.css" text="Magasin" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="51.0" layoutX="1048.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+      <Button layoutX="970.0" layoutY="26.0" mnemonicParsing="false" styleClass="blogList-navBar-btn" stylesheets="@styleSheet.css" text="Blogs" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Circle fill="WHITE" layoutX="957.0" layoutY="46.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Button layoutX="1085.0" layoutY="317.0" mnemonicParsing="false" onAction="#goToMyBlogs" prefHeight="39.0" prefWidth="153.0" styleClass="blogList-mesBlogs-btn" stylesheets="@styleSheet.css" text="Mes Blogs" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="185.0" layoutY="324.0" mnemonicParsing="false" onAction="#selectSort" styleClass="blogList-mesBlogs-btn" stylesheets="@styleSheet.css" text="Confirmer" textFill="WHITE" />
+      <Label fx:id="sortWarning" layoutX="22.0" layoutY="365.0" text="Label" textFill="RED" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
